@@ -34,7 +34,6 @@ router.get("/", (req, res) => {
 // the id, which `BlogPosts` will create. This endpoint should
 // send a 400 error if the post doesn't contain
 // `title`, `content`, and `author`
-
 router.post("/", (req, res) => {
   // ensure `name` and `budget` are in request body
   const requiredFields = ["title", "content", "author"];
@@ -60,7 +59,6 @@ router.post("/", (req, res) => {
 // the post matches the id of the path variable, and that the
 // following required fields are in request body: `id`, `title`,
 // `content`, `author`, `publishDate`
-
 router.put("/:id", (req, res) => {
   const requiredFields = ["id", "title", "content", "author", "publishDate"];
   for (let i = 0; i < requiredFields.length; i++) {
@@ -92,7 +90,6 @@ router.put("/:id", (req, res) => {
 // add endpoint for DELETE requests. These requests should
 // have an id as a URL path variable and call
 // `BlogPosts.delete()`
-
 router.delete("/:id", (req, res) => {
   BlogPosts.delete(req.params.id);
   console.log(`Deleted blog post with id \`${req.params.ID}\``);
